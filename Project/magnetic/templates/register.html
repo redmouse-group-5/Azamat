@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% block einladen %}
+	<meta charset="UTF-8">
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+	<title>Карта-НОЦ</title>
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/about2.css' %}">
+	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'snav/slicknav.min.css' %}">
+<style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 450px;
+        top: 5px;
+      }
+    </style>
+{% endblock %}
+{% block log %}<a href="signin.html">Войти</a>{% endblock %}
+{% block body %}
+  <h1>Регистрация пользователя</h1>
+  <form action="user_add" method="post">
+  {% csrf_token %}
+    <label for="id_username">Логин:</label> {{ form.username }}<br>
+    <label for="id_password1">Пароль:</label> {{ form.password1 }}
+      Пароль должен содержать 8 символов и состоять из букв и цифр<br>
+    <label for="id_password2">Пароль (снова):</label> {{ form.password2 }}<br>
+    <label for="id_first_name">Ваше имя</label>{{ myform.name }}<br>
+    <label for="id_last_name">Ваше фамилие</label>{{ myform.surname }}<br>
+      {{ myform.lat }}
+    <input type="submit" value="Зарегистрировать" />
+  </form>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var map;
+
+        // Create a map object and specify the DOM element for display.
+        var mapregister = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 41.2732757, lng: 74.7450703},
+          scrollwheel: false,
+          zoom: 7,
+          zoom_changed:true
+        });
+
+        var marker = new google.maps.Marker({
+            map: mapregister,
+            position: {lat:41.2732757, lng:74.7450703 },
+            draggable: true,
+            title: 'dsfasdfasdfa'
+
+        });
+
+
+        mapregister.addListener('click', function(event) {
+            addMarker(event.latLng)
+            document.getElementById('id_lat').value = event.latLng
+        })
+
+        function addMarker(location) {
+            marker.setMap(null);
+            marker = new google.maps.Marker({
+                position: location,
+                draggable: true,
+                map:mapregister
+            });
+        }
+
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlOWXToJcpmhPcPdxXdaebTNbuSdg79QE&callback=initMap"
+        async defer></script>
+{% endblock %}

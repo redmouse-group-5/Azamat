@@ -1,0 +1,199 @@
+/*Подключаем шрифт OpenSans к сайту*/
+@font-face {
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OpenSans/OpenSans.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans.woff") format("woff"), url("../fonts/OpenSans/OpenSans.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans.svg#OpenSans") format("svg");
+}
+/*Подключаем шрифт OpenSans-Bold к сайту*/
+@font-face {
+  font-family: "OpenSans-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OpenSans-Bold/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Bold/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold/OpenSans-Bold.ttf") format("truetype"), url("../fonts/OpenSans-Bold/OpenSans-Bold.svg#OpenSans-Bold") format("svg");
+}
+/*Подключаем шрифт OpenSans-Light к сайту*/
+@font-face {
+  font-family: "OpenSans-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OpenSans-Light/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light/OpenSans-Light.woff") format("woff"), url("../fonts/OpenSans-Light/OpenSans-Light.ttf") format("truetype"), url("../fonts/OpenSans-Light/OpenSans-Light.svg#OpenSans-Light") format("svg");
+}
+/*Подключаем шрифт OpenSans-Semibold к сайту*/
+@font-face {
+  font-family: "OpenSans-Semibold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OpenSans-Semibold/OpenSans-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Semibold/OpenSans-Semibold.woff") format("woff"), url("../fonts/OpenSans-Semibold/OpenSans-Semibold.ttf") format("truetype"), url("../fonts/OpenSans-Semibold/OpenSans-Semibold.svg#OpenSans-Semibold") format("svg");
+}
+/*Подключаем иконочный шрифт font-awesome к сайту*/
+@font-face {
+  font-family: "font-awesome";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/font-awesome/font-awesome.eot?#iefix") format("embedded-opentype"), url("../fonts/font-awesome/font-awesome.woff2") format("woff2"), url("../fonts/font-awesome/font-awesome.woff") format("woff"), url("../fonts/font-awesome/font-awesome.ttf") format("truetype"), url("../fonts/font-awesome/font-awesome.svg#font-awesome") format("svg");
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+font-family: "OpenSans", sans-serif;}
+
+a{
+	text-decoration: none;
+	color: white;}
+
+ul{padding: 0;
+	margin: 0;}
+
+.start1{background: #F9F9F9;}
+
+.over1{
+	width: 84%;
+	margin: 0 auto;
+	min-height: 25px;}
+
+.zise1{
+	font-size: 1rem;
+	font-family: "OpenSans-Light", sans-serif;
+	padding: 5px 0;
+	color: #B6B6B6;
+	padding-right: 6%;
+	display: inline-block;}
+.zise:hover{color: #39C5DE;}
+
+.blockcols-first1{
+	opacity: 1;
+	width: 78%;
+	display: inline-block;
+	position: relative;
+	padding-right: 2%;}
+
+.blockcols-second1{
+	width: 18%;
+	display: inline-block;
+	text-align: right;
+	vertical-align: top;
+	position: relative;}
+
+/*===============START======================*/
+.wrapper{
+	position: relative;}
+
+.wrapper:after{
+	content: '';
+	display: block;
+	height: 40px;}
+
+.blockcols-one{
+	opacity: 1;
+	width: 48%;
+	display: inline-block;
+	position: relative;
+	padding-right: 2%;}
+
+.blockcols-two{
+	width: 48%;
+	display: inline-block;
+	text-align: right;
+	vertical-align: top;
+	position: relative;}
+
+#header1{
+	width: 84%;
+	margin: 0 auto;}
+
+.name1{
+	padding: 20px 0;
+	font-size: 2.4rem;
+	font-family: "OpenSans-Bold", sans-serif;
+	color:#39C5DE;}
+
+.name:hover i{
+	color: black;}
+
+img{width: 50px;}
+
+.color{
+	color:#C6C6C6;
+	display: inline-block;}
+
+.login{
+	font-size: 1.2em;
+	padding:20px 0;
+}
+
+.menu{
+	width: 84%;
+	margin: 0 auto;
+	background: #39C5DE;}
+
+.menu li{
+	display: inline-block;
+	list-style: none;
+	background: #39C5DE;
+	color: white;
+	font-family: "OpenSans-Semibold", sans-serif;
+	font-size: 1rem;
+	padding: 17px 12px;
+	margin-right: -4px;
+	border-right: 1px solid #30A9BE;}
+
+.menu li:hover{background: #1D98AE;}
+.menu li:hover i{color: black;}
+/*=================ТЕЛО===СТРАНИЦЫ===========*/
+
+
+/*===================FOOTER========================*/
+.footer{
+	background: #1D98AE;
+	color: #fff;
+	margin-top: -40px;
+	width: 100%;}
+
+.footerbox{
+	width: 84%;
+	margin: 0 auto;}
+
+.patent{}
+
+.up{padding: 20px 0;	
+	font-family: "OpenSans-Light"}
+
+
+.slicknav_menu{display: none;}
+
+
+/*=================Adaptive==================*/
+
+
+@media only screen and (max-width: 768px){
+	.blockcols-one{
+		width: 100%;
+		display: block;
+		text-align: center;}
+
+	.blockcols-two{
+		width: 100%;
+		display: block;
+		text-align: center;}
+
+	.up{padding: 10px 0;}
+
+	.slicknav_menu {
+    display:block; /*включаем мобильное меню*/
+  }
+  
+  /*Отключаем обычно меню для desktop*/
+  .nav__ul {
+    display:none;
+  }
+
+  img{width: 200px;}
+}
+
+
+
+
+
+

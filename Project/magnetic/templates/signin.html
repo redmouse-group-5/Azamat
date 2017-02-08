@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block log %}<a href="register.html">Зарегистрироваться</a>{% endblock %}
+{% block body %}
+  <h1>Регистрация пользователя</h1>
+  <form action="login" method="post">
+  {% csrf_token %}
+{#    <label for="id_username">Логин:</label> {{ form.login }}#}
+{#    <label for="id_password1">Пароль:</label> {{ form.password }}#}
+      {{ form }}
+    {{ login_error }}
+    <input type="submit" value="Войти" />
+  </form>
+{% endblock %}

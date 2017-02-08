@@ -1,0 +1,396 @@
+/*Подключаем шрифт OpenSans к сайту*/
+@font-face {
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OpenSans/OpenSans.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans.woff") format("woff"), url("../fonts/OpenSans/OpenSans.ttf") format("truetype"), url("../fonts/OpenSans/OpenSans.svg#OpenSans") format("svg");
+}
+/*Подключаем шрифт OpenSans-Bold к сайту*/
+@font-face {
+  font-family: "OpenSans-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OpenSans-Bold/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Bold/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans-Bold/OpenSans-Bold.ttf") format("truetype"), url("../fonts/OpenSans-Bold/OpenSans-Bold.svg#OpenSans-Bold") format("svg");
+}
+/*Подключаем шрифт OpenSans-Light к сайту*/
+@font-face {
+  font-family: "OpenSans-Light";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OpenSans-Light/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light/OpenSans-Light.woff") format("woff"), url("../fonts/OpenSans-Light/OpenSans-Light.ttf") format("truetype"), url("../fonts/OpenSans-Light/OpenSans-Light.svg#OpenSans-Light") format("svg");
+}
+/*Подключаем шрифт OpenSans-Semibold к сайту*/
+@font-face {
+  font-family: "OpenSans-Semibold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/OpenSans-Semibold/OpenSans-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Semibold/OpenSans-Semibold.woff") format("woff"), url("../fonts/OpenSans-Semibold/OpenSans-Semibold.ttf") format("truetype"), url("../fonts/OpenSans-Semibold/OpenSans-Semibold.svg#OpenSans-Semibold") format("svg");
+}
+/*Подключаем иконочный шрифт font-awesome к сайту*/
+@font-face {
+  font-family: "font-awesome";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/font-awesome/font-awesome.eot?#iefix") format("embedded-opentype"), url("../fonts/font-awesome/font-awesome.woff2") format("woff2"), url("../fonts/font-awesome/font-awesome.woff") format("woff"), url("../fonts/font-awesome/font-awesome.ttf") format("truetype"), url("../fonts/font-awesome/font-awesome.svg#font-awesome") format("svg");
+}
+
+html, body {
+font-family: "OpenSans", sans-serif;}
+
+a{
+	text-decoration: none;
+	color: white;}
+
+.menu a{
+	padding-top: 15px;
+	padding-bottom: 15px;}
+
+ul{padding: 0;
+	margin: 0;}
+
+.start{background: #F9F9F9;}
+
+.over{
+	width: 84%;
+	margin: 0 auto;
+	min-height: 25px;}
+
+.zise{
+	font-size: 1em;
+	font-family: "OpenSans-Light", sans-serif;
+	padding: 5px 0;
+	color: #B6B6B6;
+	padding-right: 6%;
+	display: inline-block;}
+.zise:hover{color: #39C5DE;}
+
+.blockcols-first{
+	opacity: 1;
+	width: 78%;
+	display: inline-block;
+	position: relative;
+	padding-right: 2%;}
+
+.blockcols-second{
+	width: 18%;
+	display: inline-block;
+	text-align: right;
+	vertical-align: top;
+	position: relative;}
+
+
+/*===============START======================*/
+
+.wrapper{
+	position: relative;
+	padding-bottom: 10px;}
+
+.wrapper:after{
+	content: '';
+	display: block;
+	height: 40px;}
+
+.blockcols-one{
+	opacity: 1;
+	width: 48%;
+	display: inline-block;
+	position: relative;
+	padding-right: 2%;}
+
+.blockcols-two{
+	width: 48%;
+	display: inline-block;
+	text-align: right;
+	vertical-align: top;
+	position: relative;}
+
+#header{
+	width: 84%;
+	margin: 0 auto;}
+
+
+
+.name{
+	padding: 20px 0;
+	font-size: 2.4em;
+	font-family: "OpenSans-Bold", sans-serif;
+	color:#39C5DE;}
+
+.name:hover i{
+	color: black;}
+
+img{width: 50px;}
+
+.color{
+	color:#C6C6C6;
+	display: inline-block;}
+
+.login{
+	font-size: 1.2em;
+	padding:20px 0;
+}
+
+.menu{
+	width: 84%;
+	margin: 0 auto;
+	background: #39C5DE;}
+
+.menu li{
+	display: inline-block;
+	list-style: none;
+	background: #39C5DE;
+	color: white;
+	font-family: "OpenSans-Semibold", sans-serif;
+	font-size: 1em;
+	padding: 17px 12px;
+	margin-right: -4px;
+	border-right: 1px solid #30A9BE;}
+
+.menu li:hover{background: #1D98AE;}
+.menu li:hover i{color: black;}
+.slicknav_menu{display: none;}
+/*=================about====================*/
+.first{
+	font-family: "OpenSans-Light", sans-serif;
+	font-size: 1em;
+	color: black;
+	display: inline-block;}
+ hr{
+ 	margin: 0;
+    border: none;
+    background-color: #ABABAB;
+    color: #ABABAB;
+    height: 2px !important;
+    width: 100%;
+   }
+
+.second{
+	font-family: "OpenSans-Semibold", sans-serif;
+	font-size: 0.9em;
+	letter-spacing: -2px;
+	color: #39C5DE;
+	padding: 10px 0;
+	padding-bottom: 0;}
+
+.third{
+	font-family: "OpenSans-Light", sans-serif;
+	font-size: 1.5em;
+	letter-spacing: -2px;
+	color: #39C5DE;
+	padding: 15px 0;}
+
+.forth{
+	font-family: "OpenSans-Light", sans-serif;
+	font-size: 0.9em;
+	color: #575757;
+	padding: 5px 0;}
+
+.window{
+	background: white;
+	border-top: 2px solid #21ABC3;
+	padding: 7px 0;}
+
+.about{
+	box-shadow: 0 0 4px black;
+	border-radius: 25px;
+	width: 84%;
+	margin: 1% auto;}
+
+.about1{
+	box-shadow: 0 0 4px black;
+	border-radius: 25px;
+	width: 84%;
+	margin: 1% auto;
+	background: #F6F7F9;
+}
+
+.history{
+	width: 95%;
+	margin: 1% auto;}
+
+/*===========================================*/
+
+.plus{
+	width: 95%;
+	margin: 0 auto;
+	padding: 10px;}
+
+.laba{
+	display: inline-block;
+	padding: 0 2.3%;
+	width: 20%;
+	vertical-align: top;
+	color:#575757;}
+.icon{
+
+	text-align: center;
+	color:#1D98AE;}
+.icon i{
+	font-size: 7em;}
+
+.text{
+	font-size: 0.9em;
+	text-align: center;
+	font-family: "OpenSans-Semibold", sans-serif;}
+.laba p{
+	text-align: justify;
+	vertical-align: top;
+	font-family: "OpenSans", sans-serif;}
+
+.center{
+	margin: 0 auto;}
+
+/*=====================VIP===================*/
+
+.who{
+	width: 95%;
+	margin: 0 auto;
+	padding-bottom: 25px;}
+
+.gallery-photo{
+	display: inline;
+	width: 100%;
+}
+
+.gallery-photo img{
+	width: 24%;
+	height: 140px;
+	border: 1px solid black;
+}
+
+div.figure {
+  display: inline-block;
+  width: 21%;
+  border: thin silver solid;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+div.figure p {
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
+}
+img.scaled {
+  width: 100%;
+}
+
+.who-photo{
+	display: inline-block;}
+
+.who-photo img{
+	width: 140px;
+	height: 140px;
+	border-radius: 40px;
+	border: 1px solid black;}
+
+.who-name{
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 20px 10px;}
+
+.who-name li{
+	padding: 2px 0;
+	font-family: "OpenSans-Light", sans-serif;
+	list-style: none;}
+.who-name li:first-child{
+	font-family: "OpenSans-Bold", sans-serif;}
+.who-name li:last-child{
+	font-family: "OpenSans-Semibold", sans-serif;
+	color: #1D98AE;}
+
+.line { 
+    border-left: 2px solid #ABABAB;
+    padding-left: 10px;
+	text-align: justify;
+	}
+
+.who-about{
+	display: inline-block;
+	vertical-align: top;
+	padding: 20px 0;
+	width: 50%;}
+
+
+.who-about p{margin: 0;}
+
+
+
+
+/*===================FOOTER==================*/
+.footer{
+	background: #1D98AE;
+	color: #fff;
+	margin-top: -40px;
+	width: 100%;}
+
+.footerbox{
+	width: 84%;
+	margin: 0 auto;}
+
+.patent{}
+
+.up{padding: 20px 0;	
+	font-family: "OpenSans-Light"}
+/*=================adaptive==================*/
+
+
+@media only screen and (max-width: 986px){
+	.laba{width: 40%;}
+}
+
+@media only screen and (max-width: 870px){
+	.who-name{
+		padding-right: 0;
+	}
+}
+
+@media only screen and (max-width: 821px){
+	.who-about{width: 100%;}
+	.who-name{width: 50%;}
+}
+
+
+
+@media only screen and (max-width: 768px){
+	.blockcols-one{
+		width: 100%;
+		display: block;
+		text-align: center;}
+
+	.blockcols-two{
+		width: 100%;
+		display: block;
+		text-align: center;}
+
+	.up{padding: 10px 0;}
+
+	.slicknav_menu {
+    display:block; /*включаем мобильное меню*/
+  }
+  
+  /*Отключаем обычно меню для desktop*/
+  .nav__ul {
+    display:none;
+  }
+
+  img{width: 200px;}
+}
+
+@media only screen and (max-width: 650px){
+	.laba{width: 90%;}
+}
+
+@media only screen and (max-width: 410px){
+	.who-about{
+		padding-top: 0;}
+	.who-name{
+		padding-bottom: 10px;}
+}
+
+
+
+
+
+

@@ -1,0 +1,114 @@
+{%  load static %}
+{% load cache %}
+<!DOCTYPE html>
+<html lang="ru-Ru">
+<head>
+    {% block einladen %}
+	<meta charset="UTF-8">
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+	<title>Главная-НОЦ</title>
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'snav/slicknav.min.css' %}">
+
+
+
+    {% endblock %}
+</head>
+<body>
+
+{% block start %}
+<div class="start">
+	<div class="over">
+		<div class="blockcols-first">
+			<div class="zise">
+				<i class="fa fa-phone-square" aria-hidden="true"></i> {{ date.telephone }}
+			</div>
+			<div class="zise">
+				<i class="fa fa-envelope" aria-hidden="true"></i> {{ date.email }}
+			</div>
+		</div>
+        {% block log %}
+		<div class="blockcols-second">
+            {% if username %}
+                Вы вошли как {{ username }} <a href="logout">Выйти</a>
+            {% else %}
+                <a href="signin.html">Войти</a><br>
+            {% endif %}
+
+        </div>
+        {% endblock %}
+    </div>
+</div>
+
+{% endblock %}
+
+<div class="wrapper">
+
+    {% block header %}
+	<div id="header">
+		<div class="blockcols-one">
+			<div class="name">
+				<i class="fa fa-plus-square" 	aria-hidden="true"></i> <div class="color">НОЦ</div> НЦКТ
+			</div>
+		</div>
+        {% cache 50 sidebar %}
+		<div class="blockcols-two">
+			<div class="login">
+				<img src="{% static 'img/02.png' %}">
+			</div>
+		</div>
+        {% endcache %}
+	</div>
+
+    {% endblock %}
+
+    {% block menu %}
+
+	<nav>
+		<div class="mid clearfix menu">
+			<ul class="nav__ul">
+				<a href="index" class="nav__link"><li class="nav__li"><i class="fa fa-home" aria-hidden="true"></i> Главная</li></a>
+				<a href="about" class="nav__link"><li class="nav__li"><i class="fa fa-black-tie" aria-hidden="true"></i> О нас</li></a>
+				<a href="gallery" class="nav__link"><li class="nav__li"><i class="fa fa-inbox" aria-hidden="true"></i> Галерея</li></a>
+				<a href="map" class="nav__link"><li class="nav__li"><i class="fa fa-paper-plane" aria-hidden="true"></i> География выпускников</li></a>
+			</ul>
+
+		</div>
+	</nav>
+
+    {% endblock %}
+
+    {% block body %}
+
+
+    {% endblock %}
+</div>
+
+{% block footer %}
+
+<footer class="footer">
+	<div class="footerbox">
+		<div class="blockcols-one up">
+			Все права защищены 2016г.
+		</div>
+
+		<div class="blockcols-two up">
+			<a href="#header"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i> Наверх</a>
+		</div>
+
+	</div>
+</footer>
+
+{% endblock %}
+
+  <script src="http://yastatic.net/jquery/2.1.3/jquery.min.js"></script><!--Библиотека Jquery без которой не будет работать не один скрипт-->
+      <script src="{% static 'snav/jquery.slicknav.min.js' %}"></script><!--Скрипт для мобильного меню-->
+      <script src="{% static 'js/retina.min.js' %}"></script><!--Скрипт для изображения для ретина дисплеев-->
+      <script src="{% static 'js/js.js' %}"></script><!--Скрипт куда мы пишем свои настройки js-->
+
+   </body>
+   </html>

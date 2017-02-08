@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block einladen %}
+    <meta charset="UTF-8">
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+	<title>О нас-НОЦ</title>
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/about2.css' %}">
+	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'snav/slicknav.min.css' %}">
+{% endblock %}
+{% block body %}
+    {% if group %}
+        {% for groups in group %}
+            <div class="about1">
+		        <div class="plus">
+			        <div class="third">
+                        {{ groups.name }}
+                    </div>
+                    <div class="center">
+                        {% if groups.picture_set.all %}
+                            {% for pictures in groups.picture_set.all %}
+                                <div class="gallery-photo">
+                                    <div class="figure">
+                                        <p>
+                                            <img class="scaled" src="{{ pictures.picture.url }}" alt="St. Tropez">
+                                        <p>{{ pictures.descryption }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        {% endif %}
+                    </div>
+		        </div>
+	        </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

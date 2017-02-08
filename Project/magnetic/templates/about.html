@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% block einladen %}
+    <meta charset="UTF-8">
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+	<title>О нас-НОЦ</title>
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/about.css' %}">
+	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'snav/slicknav.min.css' %}">
+{% endblock %}
+
+{% if history_list and order_list and person_list %}
+    {% block body %}
+    <div class="window">
+		<div class="about">
+			{% if history_list %}
+			    <div class="history">
+				<div class="third">
+				История НОЦ НЦКТ</div>
+				<hr>
+				<div class="first">
+                {% for paragraphes in history_list %}
+                        <p>{{ paragraphes.paragraphe }}</p>
+                {% endfor %}
+                </div>
+				<hr>
+			</div>
+			{% endif %}
+
+            {% if  order_list%}
+                <div class="plus">
+			        <div class="third">Что мы предлагаем?</div>
+                        <div class="center">
+                            {% for order in order_list %}
+                                {% if order.publick %}
+                                    <div class="laba">
+                                    <div class="icon">
+                                        <i class="{{ order.avatar }}" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="text">
+                                        {{ order.name }}
+                                        <p>{{ order.descryption }}</p>
+                                    </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    <hr>
+                </div>
+            {% endif %}
+                {% if person_list %}
+                    {% for vip in person_list %}
+                        <div class="who">
+                            {% if forloop.first %}
+                                <div class="third">Важные персоны</div>
+                            {% endif %}
+                            <div class="who-photo">
+                                <img src="{{ vip.avatar.url }}">
+                            </div>
+                            <div class="who-name">
+                                <ul>
+                                    <li>{{ vip.name }}</li>
+                                    <li>{{ vip.rank }}</li>
+                                    <li>{{ vip.employment }}</li>
+                                    <li>{{ vip.email }}</li>
+                                </ul>
+                            </div>
+                            <div class="who-about">
+                                <p class="line">{{ vip.descryption }}</p>
+                            </div>
+				        </div>
+                {% endfor %}
+                {% endif %}
+		</div>
+	</div>
+    {% endblock %}
+{% endif %}

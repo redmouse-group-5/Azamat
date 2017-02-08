@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block einladen %}
+	<meta charset="UTF-8">
+	<meta name="description" content=""/>
+	<meta name="keywords" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+	<title>Карта-НОЦ</title>
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/about2.css' %}">
+	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'snav/slicknav.min.css' %}">
+<style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 450px;
+        top: 5px;
+      }
+    </style>
+{% endblock %}
+{% block body %}
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 41.2732757, lng: 74.7450703},
+          scrollwheel: false,
+          zoom: 7
+        });
+
+        {% for marker in student_list %}
+            var marker1 = new google.maps.Marker({
+                map: map,
+                position: {lat:{{ marker.lat }}, lng:{{ marker.lng }} },
+                title: '{{ marker.name }}'
+                });
+        {% endfor %}
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlOWXToJcpmhPcPdxXdaebTNbuSdg79QE&callback=initMap"
+        async defer></script>
+{% endblock %}

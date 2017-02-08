@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<div class="info">
+		<div class="say">
+			<div class="first">{{ grid.hello }}</div>
+			<hr>
+			<div class="second">{{ grid.slogan }}</div>
+			<div class="third">{{ grid.firstAdd }}</div>
+			<div class="forth">{{ grid.secondAdd }}</div>
+		</div>
+	</div>
+
+    {% if fach_list %}
+        <div class="spectr">
+            <div class="onemore">
+                <div class="second correct">Спектр специальностей:</div>
+
+                {% for fach in fach_list %}
+                        <div class="box">
+                            <div class="icon">
+                                <i class="{{ fach.avatar }}" aria-hidden="true"></i>
+                            </div>
+                            <div class="text">
+                                <div class="first correct">
+                                    {{ fach.name }}
+                                </div>
+                                <hr>
+                                <div class="forth correct">
+                                    {{ fach.mark }}
+                                </div>
+                            </div>
+                        </div>
+                {% endfor %}
+
+            </div>
+	    </div>
+    {% endif %}
+
+    {% if info_list %}
+        <div id="how">
+            <div class="onemore">
+                {% for info in info_list %}
+                        <div class="second center">
+                        {{ info.name }}
+                    </div>
+
+                    {% for titles in info.rawtitle_set.all %}
+                        {% if titles.rawsideLeft %}
+                            <div class="blockcols-one">
+                            <div class="study">
+                                <div class="third center">
+                                    {{ titles.title }}
+                                </div>
+                                <div class="first">
+                                    <ul>
+                                        {% for infos in titles.rawinformation_set.all %}
+                                            <li>{{ infos.information }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+                        {% else %}
+                            <div class="blockcols-two">
+                                <div class="study">
+                                    <div class="third center">
+                                        {{ titles.title }}
+                                    </div>
+                                    <div class="first">
+                                        <ul>
+                                            {% for infos in titles.rawinformation_set.all %}
+                                            <li>{{ infos.information }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </div>
+	    </div>
+    {% endif %}
+{% endblock %}
