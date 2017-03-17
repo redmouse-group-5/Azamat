@@ -1,0 +1,4 @@
+*.pyc
+.env/
+Project/.env/
+Project/.env
